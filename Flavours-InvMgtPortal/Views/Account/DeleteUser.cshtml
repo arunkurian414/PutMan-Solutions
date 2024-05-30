@@ -1,0 +1,112 @@
+﻿@model DeleteUserViewModel
+@{
+    ViewBag.Title = "Delete User";
+}
+<h1>
+    Delete User
+</h1>
+<form method="post" class="mt-3">
+    <div class="form-group row">
+        <label asp-for="Id" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Id" disabled class="form-control" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="UserName" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="UserName" disabled class="form-control" />
+            <span asp-validation-for="UserName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Email" disabled class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="UserIdNumber" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="UserIdNumber" disabled class="form-control" />
+            <span asp-validation-for="UserIdNumber" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="UserIdType" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="UserIdType" disabled class="form-control" />
+            <span asp-validation-for="UserIdType" class="text-danger"></span>
+        </div>
+    </div>
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group row">
+        <div class="col-sm-10">
+            <span id="deleteSpan" style="display:none">
+                <span>Are you sure you want to delete?</span>
+                <button type="submit" class="btn btn-danger">Yes</button>
+                <a asp-action="ListUsers" asp-controller="Account" class="btn btn-primary">No</a>
+            </span>
+            <span id="confirmDeleteSpan">
+                <a href="#" class="btn btn-danger" onclick="confirmDelete()">Delete</a>
+                <a asp-action="ListUsers" asp-controller="Account" class="btn btn-primary">Cancel</a>
+            </span>
+
+            
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Applicable roles for above user</h3>
+        </div>
+        <div class="card-body">
+            @if (Model.Roles.Any())
+            {
+                foreach (var role in Model.Roles)
+                {
+                    <h5 class="card-title">@role</h5>
+                }
+            }
+            else
+            {
+                <h5 class="card-title">None at the moment</h5>
+
+            }
+        </div>
+        <div class="card-footer">
+            <a asp-action="ListRole" asp-controller="Administration" asp-route-roleID="@Model.Id"
+               class="btn btn-primary" style="width:auto">Manage Roles</a>
+
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h3>Applicable claims for above user</h3>
+        </div>
+        <div class="card-body">
+            @if (Model.Claims.Any())
+            {
+                foreach (var role in Model.Claims)
+                {
+                    <h5 class="card-title">@role</h5>
+                }
+            }
+            else
+            {
+                <h5 class="card-title">None at the moment</h5>
+
+            }
+        </div>
+        <div class="card-footer">
+            <a asp-action="ListRole" asp-controller="Administration" asp-route-roleID="@Model.Id"
+               class="btn btn-primary" style="width:auto">Manage Claims</a>
+
+        </div>
+    </div>
+</form>
+@section Scripts{
+    <script src="~/js/site.js"></script>
+}
