@@ -20,3 +20,18 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+h1, i {
+    color: #800000;
+}
+h2 {
+    color: #0000FF;
+}
+
+h3 {
+    color: #800080;
+}
+
+* {
+    font-family: "Poppins, Calibri, Arial, 'Century Gothic'"
+}
