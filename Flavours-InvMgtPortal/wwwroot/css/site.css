@@ -1,72 +1,4 @@
-html {
-    font-size: 14px;
-}
-
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
-    }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    margin-bottom: 60px;
-}
-
-h1, h2, i {
-    color: #800000;
-}
-
-h3, h4 {
-    color: #0000FF;
-}
-
-h5, h6 {
-    color: #800080;
-}
-
-/** {
-    font-family: "Arial"
-}*/
-
-.btn-primary {
-    color: #fff;
-    background-color: #800000;
-    border-color: #800000;
-}
-
-    .btn-primary:hover {
-        color: #fff;
-        background-color: #800000;
-        border-color: #800000;
-    }
-
-.btn-danger {
-    color: #fff;
-    background-color: #5c636a;
-    border-color: #565e64;
-}
-
-    .btn-danger:hover {
-        color: #fff;
-        background-color: #5c636a;
-        border-color: #565e64;
-    }
-
-button {
-    border-radius: 10%;
-}
-
-/*------------------------------------------------------------------------------------------------------------------------*/
-/*From Appa*/
+/*Global elements style*/
 
 * {
     font-family: 'Segoe UI';
@@ -74,60 +6,249 @@ button {
     letter-spacing: 1.25px;
 }
 
+/*Starting with 'A'*/
+
+a:active,
+a:hover {
+    outline: double;
+    text-decoration: none;
+}
+
+/*.activeLink and .normalLink classes were used inside the index.js file. Now it is commented*/
+
+.activeLink {
+    color: #AE2029 !important;
+    background-color: #FFFFFF;
+    font-weight: 450;
+}
+
+
+/*Starting with 'b'*/
+body {
+    margin-bottom: 60px;
+    /*background-image: url("/assets/images//jpeg/backgroundImage.jpg");*/
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+button {
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 10%;
+}
+
+/*Starting with 'C'*/
+
+.card-body {
+    height: 30rem;
+}
+
+.card-style {
+    width: 50rem;
+    border: 1px;
+    border-color: #AE2029;
+}
+
+.card-footer {
+    height: 4rem;
+}
+
+
+/*Starting with 'D'*/
+
+div.card-title {
+    color: #8F0B0B;
+    font-size: 1.5rem;
+    padding-left: 14rem;
+}
+
+div.form-floating {
+    padding-bottom: 0.4rem;
+    padding-right: 0.4rem;
+    margin-top: 0.2rem;
+    margin-right: 5px;
+}
+
+
+
+/*Starting with 'E'*/
+
+
+
+/*Starting with 'F'*/
+
 footer {
     height: 3rem;
 }
 
-/*.form-floating input {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+
+/*Starting with 'G'*/
+
+
+/*Starting with 'H'*/
+
+
+/*Starting with 'I'*/
+
+.icon-size: {
+    width: 0.25em;
+    height: 0.25em;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    border-color: #ECB1C0;
+    outline: 1px dotted #000;
+    border-width: 2px;
+}
+
+ins {
+    color: #AE2029;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+
+/*Starting with 'J'*/
+
+.logoSvg {
+    background: url( '../assets/images//svg/logo.svg' );
+}
+
+/*Starting with 'K'*/
+
+
+/*Starting with 'L'*/
+
+
+/*Starting with 'M'*/
+
+.maroonColor {
+    background-color: #AE2029;
+}
+
+.mt-20 {
+    margin-top: 50px !important;
+}
+
+
+/*Starting with 'N'*/
+
+/*.activeLink and .normalLink classes were used inside the index.js file. Now it is commented*/
+
+.normalLink {
+    color: #FFFFFF !important;
+    background-color: #AE2029 !important;
+    font-weight: 450;
+}
+
+/*Starting with 'O'*/
+
+option {
+    padding: 0 24px;
+}
+
+/*Starting with 'P'*/
+
+
+
+/*Starting with 'Q'*/
+
+
+
+
+/*Starting with 'R'*/
+
+
+
+/*Starting with 'S'*/
+
+
+
+/*Starting with 'T'*/
+
+.tab-horizontal .nav-tabs .nav-link {
+    margin-top: 0.25rem;
+    margin-right: 0.250rem;
+    color: #AE2029; /*this is the color of text inside the tab-horizontal tabs*/
+    background-color: #EEEEEE; /*this is the bg color of each horizontal tabs*/
+}
+
+    .tab-horizontal .nav-tabs .nav-link.active {
+        color: #FFFFFF; /*#5969ff*/
+        background-color: #AE2029 !important;
+        /*border-color: transparent !important;*/
+    }
+
+.tab-vertical .nav.nav-tabs {
+    float: left;
+    display: block;
+}
+
+    .tab-vertical .nav.nav-tabs .nav-item {
+        margin-bottom: 0.4rem;
+        margin-top: 0.4rem;
+    }
+
+
+.tab-vertical .nav-tabs .nav-link {
+    margin-top: 0.25rem;
+    padding: 20px; /*this decides the padding inside each tab*/
+    color: #AE2029; /*this is the color of text inside the vertical tabs*/
+    background-color: #EEEEEE; /*this is the bg color of each vertical tabs*/
+    /*border-radius: 4px 0px 0px 4px;*/
+}
+
+    .tab-vertical .nav-tabs .nav-link.active {
+        color: #FFFFFF; /*#5969ff*/
+        background-color: #AE2029 !important;
+        border-color: transparent !important;
+    }
+
+.tab-vertical .tab-content {
+    overflow: hidden;
+    border-radius: 0px 4px 4px 4px;
+    padding: 10px;
+    padding-top: 0px
+}
+
+/*.tab-vertical .tab-horizontal {
+    height: 36rem;
 }*/
 
-/*#btnUp {
-    cursor: pointer;
-    width: 25px;
-    height: 25px;
-    float: left;
+.text-Maroon {
+    color: #AE2029;
+    text-shadow: 0.5px 0.5px 1px #8F0B0B;
 }
 
-#btnUp {
-    background-image: url('../assets/images/svg/email.svg')
-}
+/*Starting with 'U'*/
 
-#btnUp:hover {
-    background-image: url('../assets/images/svg/email_white.svg')
-}
+/**********************************************************************************************************************/
 
-.banner {
-    display: block;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    background: url(../assets/images/svg/email_white.svg) no-repeat;
-    width: 18px;*/ /* Width of new image */
-/*height: 23px;*/ /* Height of new image */
-/*padding-left: 180px;*/ /* Equal to width of new image */
-/*}*/
+/* to be deleeted later*/
+/*.cl-box .shd {
+    padding: 40px 30px;
+    border-radius: 8px;
+    position: relative;
+}*/
 
-.input-Style {
-    /*outline: 0;
-    border-width: 0 0 1px;
-    border-color: blue*/
-    /* border: none;
-    border-bottom: 0.5px solid #1890ff;
-    padding: 5px 10px;
-    outline: none;*/
-}
+/*.cl-box .shadow-red {
+    height: 100%;
+    background: linear-gradient(359deg, #e85c1e, rgba(232, 92, 30, 0.99) 42%, rgba(229, 91, 30, 0.73) 76%, rgba(232, 92, 30, 0.85));
+}*/
 
-input:focus {
-    border-color: green;
-    outline: 1px dotted #000
-}
+/*.cl-box .shadow-green {
+    height: 100%;
+    background-image: linear-gradient(to top, #5cc95c, rgba(92, 201, 92, 0.96) 28%, rgba(92, 201, 92, 0.96) 59%, rgba(92, 201, 92, 0.58));
+}*/
 
-.align-left {
+/*.align-left {
     text-align: start;
-}
+}*/
 
-html {
+/*html {
     font-size: 14px;
 }
 
@@ -135,94 +256,71 @@ html {
     html {
         font-size: 16px;
     }
-}
+}*/
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
 
-html {
+/*html {
     position: relative;
     min-height: 100%;
-}
+}*/
 
-body {
-    margin-bottom: 60px;
-}
-
-.logoSvg {
-    background: url( '../assets/images//svg/logo.svg' );
-}
-
-.text-Maroon {
-    color: #AE2029;
-    text-shadow: 0.5px 0.5px 1px #8F0B0B;
-    ;
-}
-
-.maroonColor {
-    background-color: #AE2029;
-    # /*671819*/ /*#8F011B*/; /*#AE2029*/ /*#8F0B0B*/
-    ; /*#8F011B*/ /*#78081C*/ /*#670E10 */
-    ;
-}
-
-.icon-size: {
-    width: 0.25em;
-    height: 0.25em;
-}
-
-.setMeasurement {
+/*.setMeasurement {
     width: 25em;
     height: 25em;
-}
+}*/
 
-.nav-link {
-    color: #fff !important;
+.card-header {
+    height: 3rem;
+    background-color: #C32148;
 }
+    /*background-color: linear-gradient(359deg, #e85c1e, rgba(232, 92, 30, 0.99) 42%, rgba(229, 91, 30, 0.73) 76%, rgba(232, 92, 30, 0.85));*/
+    /*}*/
 
-    .nav-link.active {
+    .card-header span {
+        text-align: left;
+        color: #FFFFFF;
+        font-size: 1.25rem;
+        font-weight: 500;
+    }
+
+/*.form-width {
+    width: 40rem;
+}*/
+
+/*.set-dropdown-width {
+    width: 23rem;
+}*/
+
+/*.set-dropdown-height {
+    height: 2.5rem;
+}*/
+
+/*.dropdown-toggle::after {
+    float: right;
+}*/
+
+/*.set-input-height {
+    height: .5rem;
+}*/
+
+
+/*.nav-link.active {
         color: #AE2029 !important;
         font-weight: 450;
         background-color: white !important;
-    }
+    }*/
 
-.card-style {
-    width: 50rem;
-    ;
-    height: 35rem;
-    border: 1px;
-    border-color: #AE2029
-}
+/*Supplier style - profile*/
+/*body {
+    font-family: 'Circular Std Book';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    color: #71748d;
+    background-color: #efeff6;
+    -webkit-font-smoothing: antialiased;
+}*/
 
-.form-width {
-    width: 40rem;
-}
-
-.set-dropdown-width {
-    width: 23rem;
-}
-
-.set-dropdown-height {
-    height: 2.5rem;
-}
-
-.dropdown-toggle::after {
-    float: right;
-}
-
-.set-input-height {
-    height: .5rem;
-}
-
-option {
-    padding: 0 24px;
-}
-
-select.form-control {
-    padding: 0 24px;
-}
-
-div.form-floating {
-    padding-bottom: 0.70rem;
-}
+/*.text-maroon {
+    color: #AE2029
+}*/

@@ -1,0 +1,277 @@
+﻿
+<div class="container d-flex justify-content-center">
+    <div class="card card-style border border-3 shadow-sm" style="height:auto">
+        <div class="tab-vertical border border-0 border-primary">
+            <div class="card-header">
+                <span> Customer Registration Pages</span>
+            </div> @*end of div class="card-header*@
+
+            <ul class="nav nav-tabs border  border-1" id="companyInfoTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="companyInfoNavLink" name="Customer Profile" data="Company Identity info" data-bs-toggle="tab" href="#companyInfoHref" role="tab"
+                       aria-controls="companyInfoHref" aria-selected="true">Customer Information</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="companyAddressNavLink" name="Customer Address" data-bs-toggle="tab" href="#companyAddressInfoHref" role="tab"
+                       aria-controls="companyAddressInfoHref" aria-selected="false">Customer Address</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="companyContactNavLink" name="Contact Details" data-bs-toggle="tab" href="#companyContactInfoHref" role="tab"
+                       aria-controls="companyContactInfoHref" aria-selected="false">Contact Details</a>
+                </li>
+                @* <li class="nav-item">
+                    <a class="nav-link" id="companyProductsNavLink" name="Product Information Form" data-bs-toggle="tab" href="#companyProductInfoHref" role="tab"
+                       aria-controls="companyProductInfoHref" aria-selected="false">Product Details</a>
+                </li> *@
+            </ul> @*end of ul class="nav nav-tabs"*@
+
+            <div class="card-body border border-0">
+                <div class="card-title" id="cardTitle">Customer Profile</div>
+                <div class="tab-content" id="companyInfoTabContent">
+
+                    <div class="tab-pane fade show active" id="companyInfoHref" role="tabpanel" aria-labelledby="companyInfoNavLink">
+                        <form id="companyProfileForm">
+                            <div class="row">
+
+                                <div class="col-12 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="customerName" id="customerName" placeholder="" required>
+                                        <label for="customerName" class="form-label">Customer Name <span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                @* <div class="col-12 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="businessOwnerName" id="businessOwnerName" placeholder="">
+                                        <label for="businessOwnerName" class="form-label">Business Owner Name<span class="text-danger">*</span></label>
+                                    </div>
+                                </div> *@
+                                <div class="col-12 text-start">
+                                    <div class="form-floating">
+
+                                        <input type="text" class="form-control" name="customerregistrationNo" id="customerregistrationNo" placeholder="" required>
+                                        <label for="customerregistrationNo" class="form-label">Customer Registration #<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm">
+                                            <option value="0" selected>Retail</option>
+                                            <option value="1">Wholesale</option>
+                                            <option value="2">Manufacturing</option>
+                                            <option value="3">Distribution</option>
+                                        </select>
+                                        <label for="businessType" class="form-label ps-2">Select business type<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" name="tinNo" id="tinNo" placeholder="" required>
+                                        <label for="tinNo" class="form-label">Enter TIN #<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-start">
+                                    <div class="form-floating">
+                                        <textarea type="email" style="width:32.20rem; height:7rem;" cols="300" rows="150" class="form-control" name="companyDescription" id="companyDescription" placeholder="" required></textarea>
+                                        <label for="companyDescription" class="form-label">Customer Description: Tell us  more about the customer<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form> @*end of form id="companyProfileForm"*@
+                    </div> @*div class="tab-pane fade show active" - Company Profile Form*@
+
+                    <div class="tab-pane fade" id="companyAddressInfoHref" role="tabpanel" aria-labelledby="companyAddressNavLink">
+                        <form id="companyAddressForm">
+                            <div class="row">
+                                @*<h3>Communication Address</h3>*@
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="buildingNameOrNo" id="buildingNameOrNo" placeholder="" required>
+                                        <label for="buildingNameOrNo" class="form-label">Building Name / #<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="buildingPlaceorLocation" id="buildingPlaceorLocation" placeholder="" required>
+                                        <label for="buildingPlaceorLocation" class="form-label">Place or Location<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="buildingStreetName" id="buildingStreetName" placeholder="" required>
+                                        <label for="buildingStreetName" class="form-label">Street Name<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="buildingCityName" id="buildingCityName" placeholder="" required>
+                                        <label for="buildingCityName" class="form-label">Name of City<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="buildingDistrictName" id="buildingDistrictName" placeholder="" required>
+                                        <label for="buildingDistrictName" class="form-label">Name of District<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="buildingPostalCode" id="buildingPostalCode" placeholder="" required>
+                                        <label for="buildingPostalCode" class="form-label">Postalcode (Pin Code)<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm example">
+                                            <option value="0" selected>Kerala</option>
+                                            <option value="1">Other</option>
+                                        </select>
+                                        <label for="country" class="form-label ps-2">Select State Name<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm example">
+                                            <option value="0" selected>India</option>
+                                            <option value="1">Other</option>
+                                        </select>
+                                        <label for="country" class="form-label ps-2">Select Country<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form> @*end of form id="companyAddressForm"*@
+                    </div> @*div class="tab-pane fade for address section"  - Company Address Details Form*@
+
+                    <div class="tab-pane fade" id="companyContactInfoHref" role="tabpanel" aria-labelledby="companyContactNavLink">
+                        <form id="companyContactsForm">
+                            <div class="row">
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="businessPhoneOne" id="businessPhoneOne" placeholder="" required>
+                                        <label for="businessPhoneOne" class="form-label">Enter phone #<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="businessPhoneTwo" id="businessPhoneTwo" placeholder="" required>
+                                        <label for="businessPhoneTwo" class="form-label">Additional contact #<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="businessEmailId" id="businessEmailId" placeholder="" required>
+                                        <label for="businessEmailId" class="form-label">Enter official email Id<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="businessWebsiteURL" id="businessWebsiteURL" placeholder="" required>
+                                        <label for="businessWebsiteURL" class="form-label">Enter site URL<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div> @*end of div class="tab-pane fade for contact session  - Company Contact Details Form*@
+
+
+                    @* <div class="tab-pane fade" id="companyProductInfoHref" role="tabpanel" aria-labelledby="companyProductsNavLink">
+                        <form id="companyProductsForm">
+                            <div class="row">
+                                <div class="col-12 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="productName" id="productName" placeholder="" required>
+                                        <label for="productName" class="form-label">Product name <span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm">
+                                            <option value="0" selected>Category 1</option>
+                                            <option value="1">Category 2</option>
+                                            <option value="2">Category 3</option>
+                                            <option value="3">Category 4</option>
+                                        </select>
+                                        <label for="productCategory" class="form-label ps-2">Select product category<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-6 text-start">
+                                    <div class="form-floating">
+                                        <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm">
+                                            <option value="0" selected>Product Type 1</option>
+                                            <option value="1">Product Typ 2</option>
+                                            <option value="2">Product Typ 3</option>
+                                            <option value="3">Product Typ 4</option>
+                                        </select>
+                                        <label for="productTypes" class="form-label ps-2">Select product type<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="productBasePrice" id="productBasePrice" placeholder="">
+                                        <label for="productBasePrice" class="form-label">Base price<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="productTaxPercent" id="productTaxPercent" placeholder="" required>
+                                        <label for="productTaxPercent" class="form-label">Tax percentage<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="productParityPercent" id="productParityPercent" placeholder="" required>
+                                        <label for="productParityPercent" class="form-label">% Of parity<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="producTaxAmount" id="producTaxAmount" placeholder="" required disabled>
+                                        <label for="producTaxAmount" class="form-label">Tax amount<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="productMRP" id="productMRP" placeholder="" required disabled>
+                                        <label for="productMRP" class="form-label">Amount of MRP<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="productNetAmount" id="productNetAmount" placeholder="" required disabled>
+                                        <label for="productNetAmount" class="form-label">Net amount<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-start">
+                                    <div class="form-floating">
+                                        <textarea type="email" style="width:32.20rem; height:7rem;" cols="300" rows="150" class="form-control" name="productDescription" id="productDescription" placeholder="" required></textarea>
+                                        <label for="productDescription" class="form-label">Product Description: Tell us  more about your product<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+                            </div>
+                    </form> end of form id="companyProfileForm"
+                    </div> *@ @*div class="tab-pane fade show active"  - Company Product Details Form *@ 
+
+                    @*<blockquote class="blockquote mb-0">
+                            <p>A well-known quote, contained in a blockquote element.</p>
+                            <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                        </blockquote>*@
+                </div> @*end of div class="tab-content"*@
+            </div> @*end of div class="card-body*@
+            <div class="row row-cols-1">
+                <div class="col-12">
+                    <div class="card-footer border border-0 d-flex justify-content-end">
+                        <button class="btn btn-secondary text-white m-1" type="button" id="userCancelButton">Cancel</button>
+                        <button id="saveSupplierDetails" class="btn btn-outline-primary m-1">Save Pofile</button>
+                        <button id="supplierDetailsSubmit" class="btn btn-primary maroonColor m-1">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div> @*end of iv class="tab-vertical*@
+    </div> @*end of div class="card card-style*@
+</div> @*end of <div container d-flex*@
+
+@section scripts{
+    @*<script type="text/javascript">
+
+        @*</script>*@
+    <script src="~/js/customer.js" asp-append-version="true"></script>
+}

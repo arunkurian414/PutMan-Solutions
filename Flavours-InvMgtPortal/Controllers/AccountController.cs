@@ -16,9 +16,20 @@ namespace Flavours_InvMgtPortal.Controllers
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
+        [AllowAnonymous]
         [HttpGet]
+        public IActionResult CustomerProfile()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult SupplierProfile()
+        {
+            return View();
+        }
 
         #region Edit Section for Users
+        [HttpGet]
         public IActionResult ListUsers()
         {
             var appUsers = userManager.Users;
@@ -150,12 +161,12 @@ namespace Flavours_InvMgtPortal.Controllers
             await signInManager.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
-        [AllowAnonymous]
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
+        //[AllowAnonymous]
+        //[HttpGet]
+        //public IActionResult Register()
+        //{
+        //    return View();
+        //}
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> Register(RegisterViewModel registerModel)
@@ -186,13 +197,13 @@ namespace Flavours_InvMgtPortal.Controllers
             }
             return View(registerModel);
         }
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public IActionResult login()
         {
             return View();
         }
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<IActionResult> Login(LoginViewModel loginModel, string returnUrl)
         {
             if (ModelState.IsValid)

@@ -1,231 +1,218 @@
-﻿@{
+﻿@model LoginViewModel
+
+@{
     ViewData["Title"] = "Home Page";
 
 }
 
-@*<div class="container  p-2 d-flex text-center border border-2 justify-content-center">
-    <div class="row">
-        <div class="col">*@
-<div class="card card-style border border-1 border-warning shadow-sm">
-    @*card-width removed temporarly*@
-    <div class="card-header maroonColor text-white ">
-        <ul class="nav nav-tabs card-header-tabs" id="userProcessTab" role="contentinfo">
-            <li class="nav-item">
-                <a class="nav-link active" id="userLoginNavLink" data-bs-toggle="tab" href="#userLoginPane" role="tab"
-                   aria-controls="userLoginPane" aria-selected="true">
-                    <img id="userImage" src="../assets/images/svg/user.svg" width="20" height="20" />
-                    User Sign-in
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" id="userRegistrationNavLink" data-bs-toggle="tab" href="#userRegistrationPane" role="tab"
-                   aria-controls="userRegistrationPane" aria-selected="false">
-                    <img id="userRegistrationImage" src="../assets/images/svg/addUser_white.svg" width="20" height="20" />
-                    User Registration
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" id="userForgotPwdNavLink" data-bs-toggle="tab" href="#userForgotPwdPane" role="tab"
-                   aria-controls="userForgotPwdPane" aria-selected="false">
-                    <img id="userForgotPwdImage" src="../assets/images/svg/pwdReset_white.svg" width="20" height="20" />
-                    Forgot Password
-                </a>
-            </li>
-        </ul> @*end of ul for all three tabs*@
+<div class="container d-flex justify-content-center">
+    <div class="card card-style border border-3 shadow-sm" style="height:auto">
+        <div class="tab-horizontal border border-0 border-primary">
 
-    </div> @*end of div class="card-header*@
+            <div class="card-header shadow-green">
+                <span>Sign-in Form</span>
+            </div> @*end of div class="card-header*@
 
-    <div class="card-body">
-        <div class="tab-content" id="userLoginContent">
-            @*<h2 class="justify-content-center text-info fst-italic ps-5">
-                We deliver across Kerala
-            </h2>*@
-            <div class="tab-pane fade show active border border-0 border-success" id="userLoginPane" role="tabpanel" aria-labelledby="userLoginNavLink">
-                <div class="border border-0  text-start">
-                    <h4 class="text-Maroon"> Sign-in Form </h4>
-                </div>
-                <form id="userLoginForm">
-                    <div class="row row-cols-2">
-                        <div class="col-6 align-self-end">
-                            <div class="row row-cols-1 m-2">
-                                <div class="col">
-                                    <div class="form-floating">
-                                        <input type="email" class=" form-control border border-start-0 border-top-0 border-end-0 is-invalid" name="userName" id="userName" placeholder="" required>
-                                        <label for="userName" class="disabled">User Name as email id<span class="text-danger">*</span></label>
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        Please enter your registered username.
-                                    </div>
-                                </div>5
-                            </div>
+            <ul class="nav nav-tabs card-header-tabs maroonColor ms-0 me-0 mt-0  shadow-red cl-box shd" id="userProcessTab" role="contentinfo">
+                <li class="nav-item">
+                    <a class="nav-link active" id="userLoginNavLink" name="Sign-in" data-bs-toggle="tab" href="#userLoginPane" role="tab"
+                       aria-controls="userLoginPane" aria-selected="true" data-tab-type="login">
+                        <img id="userImage" src="../assets/images/svg/user_white.svg" width="20" height="20" />
+                        User Sign-in
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="userRegistrationNavLink" name="Register user" data-bs-toggle="tab" href="#userRegistrationPane" role="tab"
+                       aria-controls="userRegistrationPane" aria-selected="false" data-tab-type="register">
+                        <img id="userRegistrationImage" src="../assets/images/svg/addUser.svg" width="20" height="20" />
+                        User Registration
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" id="userForgotPwdNavLink" name="Forgot password" data-bs-toggle="tab" href="#userForgotPwdPane" role="tab"
+                       aria-controls="userForgotPwdPane" aria-selected="false" data-tab-type="forgotPassword">
+                        <img id="userForgotPwdImage" src="../assets/images/svg/pwdReset.svg" width="20" height="20" />
+                        Forgot Password
+                    </a>
+                </li>
+            </ul> @*end of ul for all three tabs*@
 
-                            <div class="row row-cols-1 m-2">
-                                <div class="col">
-                                    <div class="form-floating">
-                                        <input type="password" class="form-control border border-start-0 border-top-0 border-end-0 is-invalid" name="password" id="password" value="" placeholder="" required>
-                                        <label for="password" class="form-label">Password <span class="text-danger">*</span></label>
+            <div class="card-body ms-2 ps-2">
+
+                <div class="card-title ps-1" id="cardTitle">Sign-in</div>
+
+                <div class="tab-content" id="userLoginContent">
+
+                    <div class="tab-pane fade show active" id="userLoginPane" role="tabpanel" aria-labelledby="userLoginNavLink">
+
+                        <form id="userLoginForm" method="post">
+
+                            <div class="row row-cols-2 ps-0">
+                                <div class="col-6 text-start">
+
+                                    <div class="row row-cols-1">
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input asp-for="Email" type="email" class="form-control border border-start-0 border-top-0 border-end-0 is-invalid pb-3" name="userName" id="userName" placeholder="" />
+                                                <label for="userName" class="disabled">User Name as email id<span class="text-danger">*</span></label>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please enter your registered username.
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="invalid-feedback">
-                                        Please enter your password.
+
+                                    <div class="row row-cols-1">
+                                        <div class="col-12 text-start">
+                                            <div class="form-floating">
+                                                <input asp-for="Password" type="password" class="form-control border border-start-0 border-top-0 border-end-0 is-invalid"
+                                                       name="signInPassword" id="signInPassword" value="" placeholder="" required>
+                                                <label for="signInPassword" class="form-label">Password <span class="text-danger">*</span></label>
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Please enter your password.
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row row-cols-1 m-2">
-                                <div class="col">
+                                    <div class="row row-cols-1">
+                                        <div class="col-12 text-start">
+                                            <div class="form-floating">
+                                                <div class="form-check form-switch pt-2">
+                                                    <input class="form-check-input" type="checkbox" id="rememberMeChecked" checked>
+                                                    <label class="form-check-label" for="rememberMeChecked">Remember me?</label>
+                                                    <label class="form-label text-primary fw-medium" id="isChekedOrNot" for="rememberMeChecked">Yes, it''s good</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @*< div class="form-group">
+                                        <div class="checkbox">
+                                            <label asp-for="RememberMe">
+                                                <input asp-for="RememberMe" />
+                                                @Html.DisplayNameFor(m => m.RememberMe)
+                                            </label>
+                                        </div>
+                                    </div> *@
+                                    @*<div class="row row-cols-1 m-2">
+                                    <div class="col">
                                     <div class="d-grid float-end">
-                                        <button class="btn btn-primary btn-sm text-sm-center maroonColor text-white float-end" type="submit">Log In</button>
+                                    <button class="btn btn-primary btn-sm text-sm-center maroonColor text-white float-end" type="submit">Log In</button>
+                                    </div>
+                                    </div>
+                                    </div>*@
+                                </div> @*end of <div class="col-6 text-start"*@
+
+                                <div class="col-6 align-self-auto">
+                                    <img id="flavoursSupplyReachImage" src="../assets/images/svg/kerala.svg" width="300" height="400" />
+                                </div>
+
+                            </div>
+
+                        </form> @*end of <form id="userLoginForm"*@
+
+                    </div> @*end of <div class="tab-pane fade show active" id="userLoginPane"*@
+
+                    <div class="tab-pane fade" id="userRegistrationPane" role="tabpanel" aria-labelledby="userRegistrationNavLink">
+
+                        <form id="userSignUpForm" method="post">
+
+                            <div class="row overflow-hidden">
+
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" required>
+                                        <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
                                     </div>
                                 </div>
+
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="middleName" id="middleName" placeholder="">
+                                        <label for="lastName" class="form-label">Middle Name<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" required>
+                                        <label for="lastName" class="form-label">Last Name<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-8 text-start">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="" required>
+                                        <label for="email" class="form-label">Enter Email (Considered as username too)<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-4 text-start">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control form-control-sm" name="phoneno" id="phoneno" placeholder="" required>
+                                        <label for="phoneno" class="form-label">Phone #<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="signUpPassword" id="signUpPassword" value="" placeholder="" required>
+                                        <label for="signUpPassword" class="form-label">Password</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-6">
+                                    <div class="form-floating">
+                                        <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" value="" placeholder="" required>
+                                        <label for="confirmpassword" class="form-label">Confirm Password</label>
+                                    </div>
+                                </div>
+
                             </div>
-                        </div>
-                        <div class="col-6 align-self-auto">
-                            <img id="flavoursSupplyReachImage" src="../assets/images/svg/kerala.svg" width="300" height="400" />
-                        </div>
+
+                        </form> @*end <form id="userSignUpForm"*@
+
+                    </div> @*end of <div class="tab-pane fade" id="userRegistrationPane"*@
+
+                    <div class="tab-pane fade" id="userForgotPwdPane" role="tabpanel" aria-labelledby="userForgotPwdNavLink">
+
+                        <form id="userForgotPwdForm">
+
+                            <div class="row overflow-hidden">
+
+                                <div class="col-12 text-start">
+                                    <div class="m-3">
+                                        Forgot your password?
+                                    </div>
+
+                                    <div class="form-floating m-3">
+                                        <input type="email" class="form-control" name="userForgotPwdEmail" id="userForgotPwdEmail" placeholder="" required>
+                                        <label for="userForgotPwd" class="form-label">Enter your email id<span class="text-danger">*</span></label>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </form>
                     </div>
-                </form>
-            </div>
 
+                </div> @*end of div class="tab-content*@
 
-            <div class="tab-pane fade" id="userRegistrationPane" role="tabpanel" aria-labelledby="userRegistrationNavLink">
-                <h4 class="text-Maroon p-0"> Registration Form </h4><br>
-                <form id="userSignUpForm" >
-                    <div class="row overflow-hidden">
-                        <div class="col-4 text-start">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" name="firstName" id="firstName" placeholder="" required>
-                                <label for="firstName" class="form-label">First Name <span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-4 text-start">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" name="middleName" id="middleName" placeholder="">
-                                <label for="lastName" class="form-label">Middle Name<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-4 text-start">
-                            <div class="form-floating">
-
-                                <input type="text" class="form-control" name="lastName" id="lastName" placeholder="" required>
-                                <label for="lastName" class="form-label">Last Name<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-6 text-start">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" name="email" id="email" placeholder="" required>
-                                <label for="email" class="form-label">Enter Email<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-6 text-start">
-                            <div class="form-floating">
-                                <textarea type="text" class="form-control" name="address" id="address" placeholder="" required></textarea>
-                                <label for="address" class="form-label">Communication Address<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-
-                        <div class="col-4 text-start">
-                            <div class="form-floating">
-                                <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm example">
-                                    <option value="0" selected>Retail</option>
-                                    <option value="1">Wholesale</option>
-                                </select>
-                                <label for="country" class="form-label ps-2">Select business type<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="form-floating">
-                                <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm example">
-                                    <option value="0" selected>India</option>
-                                    <option value="1">Other</option>
-                                </select>
-                                <label for="country" class="form-label ps-2">Select Country<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-4 ">
-                            <div class="form-floating">
-                                <select class="form-select form-select-sm ps-2" aria-label=".form-select-sm example">
-                                    <option value="0" selected>Kerala</option>
-                                    <option value="1">Other</option>
-                                </select>
-                                <label for="country" class="form-label ps-2">Select State<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-4 text-start">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" name="address" id="postoffice" placeholder="" required>
-                                <label for="postoffice" class="form-label">Post Office<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-4 text-start">
-                            <div class="form-floating">
-                                <input type="text" class="form-control form-control-sm" name="pincode" id="pincode" placeholder="" required>
-                                <label for="pincode" class="form-label">Pincode<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-4 text-start">
-                            <div class="form-floating">
-                                <input type="text" class="form-control form-control-sm" name="phoneno" id="pincode" placeholder="" required>
-                                <label for="phoneno" class="form-label">Phone #<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="password" class="form-control" name="password" id="password" value="" placeholder="" required>
-                                <label for="password" class="form-label">Password</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="password" class="form-control" name="confirmpassword" id="confirmpassword" value="" placeholder="" required>
-                                <label for="confirmpassword" class="form-label">Confirm Password</label>
-                            </div>
-                        </div>
-                        @*<div class="col-12">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" name="iAgree" id="iAgree" required>
-                                <label class="form-check-label text-secondary" for="iAgree">
-                                    I agree to the <a href="#!" class="link-primary text-decoration-none">terms and conditions</a>
-                                </label>
-                            </div>
-                        </div>*@
-                        <div class="col-12">
-                            <div class="d-block text-end">
-                                <button class="btn btn-outline-primary btn-sm maroonColor text-white w-10" type="submit">Sign up</button>
-                            </div>
-                        </div>
+            </div> @*end of div class="card-body*@
+            <div class="row row-cols-1">
+                <div class="col-12">
+                    <div class="card-footer border border-0 d-flex justify-content-end">
+                        <button class="btn btn-secondary text-white m-1" type="button" id="userCancelButton">Cancel</button>
+                        <button class="btn btn-primary maroonColor text-white m-1" type="button" id="userSubmitButton" onclick="login()">Login</button>
                     </div>
-                </form>
-
+                </div>
             </div>
+           
+        </div>@*end of <div class="tab-horizontal*@
+    </div> @*end of div class="card card-width*@
+</div> @*end of div class="container*@
 
-            <div class="tab-pane fade" id="userForgotPwdPane" role="tabpanel" aria-labelledby="userForgotPwdNavLink">
-                <h4 class="text-Maroon"> Forgot Password Form </h4>
-                <form id="userForgotPwdForm">
-                    <div class="row overflow-hidden">
-                        <div class="col-12 text-start">
-                            <div class="m-3">
-                                Forgot your password?
-                            </div>
-                            <div class="form-floating m-3">
-                                <input type="email" class="form-control" name="userForgotPwdEmail" id="userForgotPwdEmail" placeholder="" required>
-                                <label for="userForgotPwd" class="form-label">Enter your email id<span class="text-danger">*</span></label>
-                            </div>
-                        </div>
-                        <div class="col-12">
-                            <div class="d-block text-end m-3">
-                                <button class="btn btn-secondary btn-sm text-white w-10" type="submit">Cancel</button>
-                                <button class="btn btn-outline-primary btn-sm maroonColor text-white w-10" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
 
-        </div> @*end of div class="tab-content*@
-    </div> @*end of div class="card-body*@
-</div> @*end of div class="card card-width*@
-@*</div>*@ @*end of div class="col"*@
-@*</div>*@ @*end of div class="row"*@
-@*</div>*@ @*end of div class="container*@
+@section scripts {
 
+    <script src="~/js/index.js" asp-append-version="true"></script>
+}
 
